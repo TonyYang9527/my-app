@@ -5,6 +5,7 @@ import App from './App';
 import Home from './comonents/home/Home';
 import About from './comonents/about/About';
 import Car from './comonents/car/Car';
+import CarDetail from './comonents/car/CarDetail';
 import createBrowserHistory from 'history/createBrowserHistory' ;
 
 const history = createBrowserHistory();
@@ -60,11 +61,12 @@ const data = [
 
 ReactDOM.render(
     <Router history={history} >
-        <Route component={App}>
-            <Route path="/" component={Home} />
+        <App>
+            <Route exact path="/" component={Home} />
             <Route path="/cars" component={Car} data={data} />
+            <Route path="/cars/:id" component={CarDetail} data={data} />
             <Route path="/about" component={About} />
-        </Route>
+            </App>
     </Router>,
     document.getElementById('root')
 );

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom' ;
 class App extends Component {
-  
 
   render() {
     return (
@@ -20,9 +19,8 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        
         <div>
-          {/******this.props.children**/}
+          {this.props.children}
         </div>
       
       </div>
