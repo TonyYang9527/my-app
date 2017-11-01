@@ -54,7 +54,7 @@ class Car extends Component{
     ];
     //console.log(cars);
     //const cars2 = this.props.route.data;
-    console.log(cars);
+    console.log(cars); 
     var carNode = cars.map(function (car) {
      return (
          <li key={car.id} > 
