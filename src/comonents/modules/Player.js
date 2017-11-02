@@ -1,7 +1,8 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import DBAPI from './DBAPI' ;
-/********definde const ***************/
+/********definde by const ***************/
 const Player = (props) => {
     const player = DBAPI.get(
         parseInt(props.match.params.number, 10)
@@ -13,11 +14,12 @@ const Player = (props) => {
         <div>
             <h1>{player.name} (#{player.number})</h1>
             <h2>{player.position}</h2>
+            <Link to='/roster'>Back</Link>
         </div>  
     ) ;
 }
 
-/********definde class ***************/
+/********definde by  class ***************/
 /************
 class Player extends React.Component{
 
@@ -30,6 +32,7 @@ render(){
             <div>
                 <h1>{player.name} (#{player.number})</h1>
                 <h2>{player.position}</h2>
+                <Link to='/roster'>Back</Link>
             </div>    
     );
 }
