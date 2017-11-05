@@ -57,7 +57,8 @@ class Store {
         this.defaultVal = event.target.value
     }
     @action.bound addTodo(event) {
-        if (event.keyCode === 13) {
+        console.log("Key code:"+ event.keyCode);
+        if (event.keyCode === 13 ) {
             this.todoData.push(event.target.value)
             this.defaultVal = ''
         } else {

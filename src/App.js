@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import ToDoList from './components/ToDoList' ;
 import AddToDo from './components/AddToDo';
 import ToggleList from './components/ToggleList';
@@ -17,7 +15,7 @@ class App extends Component {
 *****/
 
 const App = ({ store }) => (
-  <div className="todo-app">
+  <div >
     <AddToDo store={store} />
     <ToggleList store={store} />
     <ToDoList store={store} />
