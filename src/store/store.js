@@ -19,7 +19,7 @@ class Store {
     }
     @computed get getListData() {
         if (this.checked) {
-            return this.todoData
+            return this.todoData ;
         } else {
             let val = []
             this.todoData.forEach(el => {
@@ -32,24 +32,16 @@ class Store {
     }
     @computed get setLeftStyle() {
         if (this.checked) {
-            return {
-                background: 'rgba(150, 150, 150, 0.5)'
-            }
+            return {background: 'rgba(150, 150, 150, 0.5)' }
         } else {
-            return {
-
-            }
+            return { }
         }
     }
     @computed get setRightStyle() {
         if (!this.checked) {
-            return {
-                background: 'rgba(150, 150, 150, 0.5)'
-            }
+            return {  background: 'rgba(150, 150, 150, 0.5)' }
         } else {
-            return {
-
-            }
+            return { }
         }
     }
 
@@ -57,14 +49,16 @@ class Store {
         this.defaultVal = event.target.value
     }
     @action.bound addTodo(event) {
-        console.log("Key code:"+ event.keyCode);
-        if (event.keyCode === 13 ) {
-            this.todoData.push(event.target.value)
+        // ! param  :  is null  or undefined  or empty.
+        if (event.target.value && event.keyCode === 13) {
+            let add = { time: '17-11-11', data: event.target.value, status: true };
+            this.todoData.push(add);
             this.defaultVal = ''
-        } else {
+        }else{ 
             return false
         }
     }
+
     @action.bound handerToggleLeft() {
         this.checked = true
     }

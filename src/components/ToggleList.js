@@ -9,11 +9,11 @@ class ToggleList extends React.Component{
             <div className="toggle-list">
                 <p style={store.setLeftStyle}>
                     all
-          <input type="radio" name="allornot" readOnly={store.checked} onChange={store.handerToggleLeft} />
+          <input type="radio" name="allornot" checked={store.checked} onChange={store.handerToggleLeft} />
                 </p>
                 <p style={store.setRightStyle}>
                     part
-          <input type="radio" name="allornot" readOnly={!store.checked} onChange={store.handerToggleRight} />
+          <input type="radio" name="allornot" checked={!store.checked} onChange={store.handerToggleRight} />
                 </p>
             </div>
         )
