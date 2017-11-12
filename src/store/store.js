@@ -8,9 +8,21 @@ class Store {
     
     welcome = () => {
         autorun(() => {
-            if (this.defaultVal === 'hunter') {
-                console.log('welcome')
+            if (this.defaultVal === 'welcome') {
+                console.log('welcome....');
+                console.log('fetch  weather_mini  information ....');
+                let url = 'http://wthrcdn.etouch.cn/weather_mini?citykey=101010100' ;
+                let req = new Request(url, { method: 'GET', cache: 'reload' });
+                fetch(req).then(function (response) {
+                    return response.json();
+                }).then(function (json) {
+                    console.log('json status :' + JSON.stringify(json.status));
+                    console.log('json desc:' + JSON.stringify(json.desc));
+                    console.log('json data:' + JSON.stringify(json.data));
+                    console.log('json city:' + JSON.stringify(json.data.city));
+                });
             }
+
         })
     }
 

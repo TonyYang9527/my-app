@@ -12,11 +12,13 @@ module.exports = {
         filename: './src/bundle.js',
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+
         new htmlWebpackPlugin({
             template: './public/index.html'
         }),
         new OpenBrowserPlugin({
-            url: 'http://localhost:3000'
+            url: 'http://192.168.31.20:3000/'
         }),
         new webpack.DefinePlugin({
             'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH)
@@ -48,7 +50,11 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
     devServer: {
-        compress: true,
-        port: 3000
+        historyApiFallback: true,
+        hot: true,
+        host: '192.168.31.20',
+        port:'3000',
+        inline: true,
+        progress: true
     }
 }
