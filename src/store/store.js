@@ -27,19 +27,19 @@ class Store {
     }
 
     @computed get getInputLength() {
-        return this.defaultVal.length
+        return this.defaultVal.length ;
     }
     @computed get getListData() {
         if (this.checked) {
             return this.todoData ;
         } else {
-            let val = []
+            let val = [] ;
             this.todoData.forEach(el => {
                 if (el.status) {
-                    val.push(el)
+                    val.push(el) ;
                 }
             })
-            return val
+            return val ;
         }
     }
     @computed get setLeftStyle() {
@@ -63,6 +63,7 @@ class Store {
     @action.bound addTodo(event) {
         // ! param  :  is null  or undefined  or empty.
         if (event.target.value && event.keyCode === 13) {
+            event.t
             let add = { time: '17-11-11', data: event.target.value, status: true };
             this.todoData.push(add);
             this.defaultVal = ''

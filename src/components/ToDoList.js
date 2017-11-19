@@ -5,7 +5,7 @@ import { observer, inject } from 'mobx-react'
 class ToDoList extends Component {
 render(){
 
-    console.log("ToDoList  ");
+    console.log("ToDoList");
     let store = this.props.store ;
     return (
         <ul className="todo-list">
