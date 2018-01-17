@@ -4,7 +4,6 @@ import { observer, inject } from 'mobx-react'
 @observer 
 class ToDoList extends Component {
 render(){
-
     console.log("ToDoList");
     let store = this.props.store ;
     return (
@@ -14,6 +13,6 @@ render(){
             }
         </ul>
     );
-}
+   }
 }
 export default ToDoList;
