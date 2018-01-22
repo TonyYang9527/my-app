@@ -1,0 +1,46 @@
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5a5f671cd7591465c706d746/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+------------------------------------
+
+<script> 
+window.ppSettings = {app_uuid:'36c4f00c-fd9e-11e7-bd74-02287b8c0ebf'};
+(
+function(){
+var w=window,
+d=document;
+
+function l(){
+var a=d.createElement('script');
+a.type='text/javascript';
+a.async=!0;
+a.charset='utf-8';
+a.src='https://ppmessage.com/ppcom/assets/pp-library.min.js';
+var b=d.getElementsByTagName('script')[0];
+b.parentNode.insertBefore(a,b)
+}
+
+ l();
+}
+)();
+</script>
+
+
+
+
+https://www.ppmessage.com/
+
+Tawk_API.visitor:
+https://www.tawk.to/javascript-api/ways-to-set-name-and-email-through-javascript-api/
