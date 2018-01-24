@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ToDoList from './components/ToDoList' ;
+import AddToDo from './components/AddToDo';
+import ToggleList from './components/ToggleList';
 
+/***********
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
 }
+*****/
+
+const App = ({ store }) => (
+  <div >
+    <AddToDo store={store} />
+    <ToggleList store={store} />
+    <ToDoList store={store} />
+  </div>
+)
 
 export default App;
