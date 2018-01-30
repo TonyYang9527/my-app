@@ -13,6 +13,7 @@ class AddToDo extends React.Component {
                     value={store.defaultVal}
                     onChange={store.handlerChange}
                     onKeyDown={store.addTodo}
+                    
                   
                 />
                 <i className="input-length">{store.getInputLength}</i>

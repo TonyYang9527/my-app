@@ -18,7 +18,7 @@ module.exports = {
             template: './public/index.html'
         }),
         new OpenBrowserPlugin({
-            url: 'http://192.168.31.20:3000/'
+            url: 'http://192.168.65.54:3000/'
         }),
         new webpack.DefinePlugin({
             'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH)
@@ -52,7 +52,7 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         hot: true,
-        host: '192.168.31.20',
+        host: '192.168.65.54',
         port:'3000',
         inline: true,
         progress: true

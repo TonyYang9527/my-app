@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ToDoList from './components/ToDoList' ;
 import AddToDo from './components/AddToDo';
 import ToggleList from './components/ToggleList';
+import IM from './components/IM';
 
 /***********
 class App extends Component {
@@ -14,11 +15,12 @@ class App extends Component {
 }
 *****/
 
-const App = ({ store }) => (
+const App = ({ store ,socket }) => (
   <div >
-    <AddToDo store={store} />
-    <ToggleList store={store} />
-    <ToDoList store={store} />
+     <IM socket={socket} />
+     <AddToDo store={store} />
+     <ToggleList store={store} />
+     <ToDoList store={store} />
   </div>
 )
 
