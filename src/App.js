@@ -3,7 +3,6 @@ import  DragDrop from '../src/components/DragDrop';
 import Formio from 'formiojs';
 import FormBuilder from 'formiojs/FormBuilder';
 
-
 var subJSON = document.getElementById('subjson');
 
 var builder = new FormBuilder(
@@ -35,6 +34,7 @@ const  setDisplay = function(display) {
   builder.setDisplay(display).then(function(instance) {
      var jsonElement = document.getElementById('json');
      var formElement = document.getElementById('formio');
+
      instance.on('saveComponent', function(event) {
        var schema = instance.schema;
        jsonElement.innerHTML = '';
@@ -48,9 +48,7 @@ const  setDisplay = function(display) {
      });
      
      instance.on('updateComponent', function(event) {
-
-      console.log("updateComponent => " ,instance.schema) ;
-
+      //console.log("updateComponent => " ,instance.schema) ;
        jsonElement.innerHTML = '';
        jsonElement.appendChild(document.createTextNode(JSON.stringify(instance.schema, null, 4)));
      });
@@ -60,7 +58,8 @@ const  setDisplay = function(display) {
        jsonElement.appendChild(document.createTextNode(JSON.stringify(instance.schema, null, 4)));
      });
      
-    // Formio.createForm(formElement, instance.schema).then(onForm);
+  
+   // new Formio.createForm(formElement, instance.schema).then(onForm);
    });
 };
 
@@ -75,7 +74,7 @@ class App extends React.Component{
   render() {
     setDisplay('form') ;
     return (
-      <DragDrop />
+      <DragDrop key={Math.random()} />
     );
   }
 }
