@@ -21,7 +21,7 @@ var builder = new FormBuilder(
   baseUrl: 'https://examples.form.io'
 });
 
-var onForm = function(form) {
+let onForm = function(form) {
   console.log("onForm => " ,form.submission ) ;
   form.on('change', function() {
     subJSON.innerHTML = '';
@@ -32,11 +32,11 @@ var onForm = function(form) {
 
 const  setDisplay = function(display) {
   builder.setDisplay(display).then(function(instance) {
-     var jsonElement = document.getElementById('json');
-     var formElement = document.getElementById('formio');
+     let jsonElement = document.getElementById('json');
+     let formElement = document.getElementById('formio');
 
      instance.on('saveComponent', function(event) {
-       var schema = instance.schema;
+      let schema = instance.schema;
        jsonElement.innerHTML = '';
        formElement.innerHTML = '';
        jsonElement.appendChild(document.createTextNode(JSON.stringify(schema, null, 4)));
