@@ -1,11 +1,12 @@
 import React from 'react';
 import  DragDrop from '../src/components/DragDrop';
-import Formio from 'formiojs';
+import Formio from 'formiojs/Formio';
 import FormBuilder from 'formiojs/FormBuilder';
+import Form from 'formiojs/Form';
 
 var subJSON = document.getElementById('subjson');
 
-var builder = new FormBuilder(
+var builder = new Formio.FormBuilder(
   document.getElementById("builder"),
 {
   display: 'form',
@@ -20,6 +21,7 @@ var builder = new FormBuilder(
 {
   baseUrl: 'https://examples.form.io'
 });
+
 
 let onForm = function(form) {
   console.log("onForm => " ,form.submission ) ;
@@ -59,7 +61,7 @@ const  setDisplay = function(display) {
      });
      
   
-   // new Formio.createForm(formElement, instance.schema).then(onForm);
+     Formio.createForm(formElement, instance.schema).then(onForm);
    });
 };
 
@@ -70,7 +72,7 @@ const  setDisplay = function(display) {
 // });
 
 class App extends React.Component{
-
+  
   render() {
     setDisplay('form') ;
     return (
