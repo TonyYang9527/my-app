@@ -5,13 +5,13 @@ import FormBuilder from 'formiojs/FormBuilder';
 
 class FormTemplateMaker extends React.Component{
     
-    static defaultProps = {
+     static defaultProps = {
         options: {}
-    };
+     };
 
     static propTypes = {
-        form: PropTypes.object,
-        options: PropTypes.object,
+         form: PropTypes.object,
+         options: PropTypes.object,
     };
 
     componentWillUnmount = () => {
