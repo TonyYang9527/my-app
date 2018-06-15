@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import  './LoadComponents';
 import FormBuilder from 'formiojs/FormBuilder';
 
-class FormTemplateMaker extends React.Component{
+class FormMaker extends React.Component{
     
      static defaultProps = {
         options: {}
@@ -15,14 +15,15 @@ class FormTemplateMaker extends React.Component{
     };
 
     componentWillUnmount = () => {
-        console.log("componentWillUnmount => Run") ;
+      console.log(" componentWillUnmount => run ");
         if (this.builder !== undefined) {
           this.builder.instance.destroy(true);
         }
     };
 
     render = () => {
-        return <div   ref={element =>  this.element = element} />;
+      console.log(" render => run ");
+        return <div ref={element => this.element = element} />;
     };
 
     componentDidMount = () => {
@@ -31,6 +32,7 @@ class FormTemplateMaker extends React.Component{
     };
 
     componentWillReceiveProps = (nextProps) => {
+      console.log(" componentWillReceiveProps => run ");
       const {options, form} = this.props;
       if (form !== nextProps.form) {
         this.initializeBuilder();
@@ -66,5 +68,5 @@ class FormTemplateMaker extends React.Component{
         });
     };
   }
-  export default FormTemplateMaker;
+  export default FormMaker;
   
