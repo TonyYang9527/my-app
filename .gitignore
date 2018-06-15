@@ -22,4 +22,4 @@ yarn-error.log*
 yarn.lock*
 package-lock.json*
 debug.log*
-/.vscode
+.vscode
