@@ -8,7 +8,7 @@ import _ from 'lodash';
  * For Form Builder left components List  
  * 
  * *****/
-class Components extends React.Component{
+class ProxyComponents extends React.Component{
 
 
     static propTypes = {
@@ -25,9 +25,13 @@ class Components extends React.Component{
           render() {
             console.log('Current props: ', this.props);
             console.log('Next props: ', injectedProps);
-            return <WrappedComponent  {...this.props} />;
+            const newProps = {
+              injected: injectedProps
+            }
+
+            return <WrappedComponent  {...this.props} {...newProps} />;
            }
         }
       }
 }
-export default Components;
+export default ProxyComponents;
