@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import  './LoadComponents';
+import AllComponents from 'formiojs/components';
+import Components from 'formiojs/components/Components';
 import FormBuilder from 'formiojs/FormBuilder';
+Components.setComponents(AllComponents);
 
 class FormMaker extends React.Component{
     
@@ -13,26 +15,22 @@ class FormMaker extends React.Component{
          form: PropTypes.object,
          options: PropTypes.object,
     };
-
+    
     componentWillUnmount = () => {
-      console.log(" componentWillUnmount => run ");
         if (this.builder !== undefined) {
           this.builder.instance.destroy(true);
         }
     };
 
     render = () => {
-      console.log(" render => run ");
-        return <div ref={element => this.element = element} />;
+        return <div ref={element => this.element = element}/>;
     };
 
     componentDidMount = () => {
-      console.log(" componentDidMount => run ");
       this.initializeBuilder();
     };
 
     componentWillReceiveProps = (nextProps) => {
-      console.log(" componentWillReceiveProps => run ");
       const {options, form} = this.props;
       if (form !== nextProps.form) {
         this.initializeBuilder();
@@ -43,8 +41,6 @@ class FormMaker extends React.Component{
     };
 
     initializeBuilder = () => {
-
-      console.log(" initializeBuilder =>  element: " ,this.element);
         const {options, form} = this.props;
         this.builder = new FormBuilder(this.element, form, options);
         this.builderReady = this.builder.setDisplay(form.display);

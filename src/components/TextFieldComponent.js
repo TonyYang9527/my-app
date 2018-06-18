@@ -1,23 +1,28 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
-
 
 /**
- * 
  * For Form Builder left components List  
- * 
  * *****/
 class TextFieldComponent extends React.Component{
-
-
     static propTypes = {
-        components: PropTypes.object,
+         label: PropTypes.string,
+         key: PropTypes.string,
+         type:  PropTypes.string,
+         mask: PropTypes.bool,
+         inputType:  PropTypes.string,
      };
 
     static defaultProps = {
-      components: {}
+         label: 'Text Field',
+         key: 'textField',
+         type: 'textfield',
+         mask: false,
+         inputType: 'text',
      };
-
+     
+     render =() =>{
+        return(<div><input name={this.props.name}  key={this.props.key}  type="text" /></div> ) ;
+    };
 }
 export default TextFieldComponent;

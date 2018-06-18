@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-
+import _ from 'lodash';
+import Components from './Components';
 /**
  * Load  custom all  Components
  * ***/
@@ -8,24 +9,18 @@ class ComponentFactory extends React.Component{
     
   static propTypes = {
          components: PropTypes.object,
+         type: PropTypes.string,
     };
 
   static defaultProps = {
-      components: {}
+      components: _.assign(Components.components, Components),
+      type :null
    };
 
-
     render=() => {
-     let component = {} ;
-     let props ={} ;
-     return React.createElement(component, {props});
-    }
-    
+      console.log(":", this.props.components );
+      return React.createElement(this.props.components[this.props.type] ,{...this.props.type});
+    } 
   }
-
-   ComponentFactory.registerComponent = function(type, component ){
-	  let props = TypeField.prototype;
-	   props.components[type] = component;
-  };
   export default ComponentFactory;
   
