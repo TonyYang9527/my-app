@@ -22,7 +22,10 @@ class ComponentBuilder extends React.Component{
      };
      
      render =() =>{
-        return(<span id='builder-${.key}' class='drag-copy'><i class={this.props.icon} style={{marginRight: 5}}></i>{this.props.title}</span> ) ;
+        return(<span id='builder-${this.props.key}' class='btn btn-primary btn-xs btn-block formcomponent drag-copy'>
+        <i class={this.props.icon} style={{marginRight: 5}} />
+         {this.props.title}
+        </span> ) ;
     };
 }
 export default ComponentBuilder;
