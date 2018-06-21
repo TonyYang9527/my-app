@@ -21,9 +21,6 @@ ReactDOM.render(
        <Group>
          <GroupContainer>
             <ComponentBuilder />
-            <ComponentBuilder />
-            <ComponentBuilder />
-            <ComponentBuilder />
          </GroupContainer>
      </Group>
     </GroupPanel>

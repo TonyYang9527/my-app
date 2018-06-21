@@ -22,7 +22,7 @@ static defaultProps = {
             <button className='btn btn-block builder-group-button'
              data-toggle='collapse' 
              data-parent={'#'+this.props.id}
-             data-target ={'#group'+this.props.type} > 
+             data-target ={'#group-'+this.props.type} > 
              
              {this.props.children}
             </button>
