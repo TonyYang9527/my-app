@@ -5,12 +5,10 @@ class Group extends React.Component{
     
     static propTypes = {
          key: PropTypes.string,
-         children:  PropTypes.object,
     };
     
     static defaultProps = {
         key : 'basic',
-        children: null,
      };
      
     render =() =>{

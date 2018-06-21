@@ -9,33 +9,18 @@ import Group from '../src/components/Group';
 import GroupHeader from '../src/components/GroupHeader';
 import GroupPanel from '../src/components/GroupPanel';
 import BuilderSidebar from '../src/components/BuilderSidebar';
+import FormComponents from '../src/components/FormComponents';
 
+const id ='builder-sidebar-'+Math.random().toString(36).substring(7) ; 
 ReactDOM.render(
-<BuilderSidebar>
-    <GroupPanel>
-       <GroupHeader>Basic</GroupHeader>
+
+<FormComponents>
+<BuilderSidebar id={id}>
+    <GroupPanel >
+       <GroupHeader id={id}>Basic</GroupHeader>
        <Group>
          <GroupContainer>
             <ComponentBuilder />
-            <ComponentBuilder />
-            <ComponentBuilder />
-         </GroupContainer>
-     </Group>
-    </GroupPanel>
-    <GroupPanel>
-       <GroupHeader>Advanced</GroupHeader>
-       <Group>
-         <GroupContainer>
-            <ComponentBuilder />
-            <ComponentBuilder />
-            <ComponentBuilder />
-         </GroupContainer>
-     </Group>
-    </GroupPanel>
-    <GroupPanel>
-       <GroupHeader>Layout</GroupHeader>
-       <Group>
-         <GroupContainer>
             <ComponentBuilder />
             <ComponentBuilder />
             <ComponentBuilder />
@@ -43,5 +28,6 @@ ReactDOM.render(
      </Group>
     </GroupPanel>
     </BuilderSidebar>
+    </FormComponents>
     , document.getElementById('builder'));
 //ReactDOM.render(<FormMaker form={{display: 'form'}}  options={{base: 'https://examples.form.io'} } />, document.getElementById('root'));
