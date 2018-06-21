@@ -18,7 +18,6 @@ class ComponentFactory extends React.Component{
    };
 
     render=() => {
-      console.log(":", this.props.components );
       return React.createElement(this.props.components[this.props.type] ,{...this.props.type});
     } 
   }
