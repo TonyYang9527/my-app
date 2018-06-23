@@ -14,10 +14,10 @@ static defaultProps = {
    id : '',
    type : '',
    title : '',
-   onOpenGroup : ()=>{} ,
+   onOpenGroup : () => void(0) ,
 };
- 
-    render =() =>{
+
+render =() =>{
         return(
           <div  className='card-header panel-heading form-builder-group-header'>
           <h5 className='mb-0 panel-title' > 
@@ -26,11 +26,12 @@ static defaultProps = {
              data-toggle='collapse' 
              data-parent={'#'+this.props.id}
              data-target ={'#group-'+this.props.type} 
-             onClick={e =>this.props.onOpenGroup(this.props.type)}> 
-             {this.props.title}
+             onClick={e =>this.props.onOpenGroup(this.props.type) }> 
+               {this.props.title}
             </button>
           </h5>
          </div>) ;
     };
 }
+
 export default observer(GroupHeader);

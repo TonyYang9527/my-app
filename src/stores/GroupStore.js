@@ -1,4 +1,4 @@
-import {observable, action,autorun} from 'mobx';
+import {observable, action,autorun,isObservableObject} from 'mobx';
 import _ from  'lodash' ;
 const state = observable({
      groups: [],
@@ -9,9 +9,16 @@ const actions = {
              name : 'basic',
              title: 'Basic Components',
              weight: 0,
-             className : 'panel-collapse collapse' , 
+             className : 'panel-collapse collapse ' , 
         } ;
+        let  advanced ={
+            name : 'advanced',
+            title: 'Advanced',
+            weight: 0,
+            className : 'panel-collapse collapse ' , 
+       } ;
      state.groups.push(basic);
+     state.groups.push(advanced);
     }),
 
     getGroups: action(() => {
@@ -37,7 +44,7 @@ const actions = {
 
         let element=_.find(state.groups, _.matchesProperty('name', name));
         console.log("getClassName :" ,element);
-        console.log("getClassName :" ,element);
+        console.log("isObservableObject :" ,isObservableObject(element));
         return element.className ;
     })
 };

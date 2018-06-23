@@ -11,7 +11,7 @@ import {observer} from 'mobx-react';
 const id ='builder-sidebar-'+Math.random().toString(36).substring(7) ; 
 
 class FormComponents extends React.Component{
-       
+  
     render =() =>{
         return(
           <div className='col-xs-4 col-sm-3 col-md-2 formcomponents'>
@@ -20,11 +20,10 @@ class FormComponents extends React.Component{
            actions.getGroups().map((group , index)=>{
                return (
                    <GroupPanel key={index} type ={group.name} >
-                     <GroupHeader id={id} type={group.name} title={group.name} onOpenGroup={actions.changeClassName} />
-                     <Group type={group.name} className={actions.getClassName(group.name)}>
+                     <GroupHeader id={id} type={group.name} title={group.title} onOpenGroup={actions.changeClassName} />
+                     <Group type={group.name} className={group.className}>
                       <GroupContainer type={group.name}>
                         <ComponentBuilder  />
-                       
                       </GroupContainer>
                      </Group>
                      

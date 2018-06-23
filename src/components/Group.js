@@ -23,4 +23,5 @@ class Group extends React.Component{
          </div>) ;
     };
 }
+
 export default observer(Group);
