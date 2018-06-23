@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/**
- * For Form Builder left components List  
- * *****/
 class TextFieldComponent extends React.Component{
     static propTypes = {
          label: PropTypes.string,

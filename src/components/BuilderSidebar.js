@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {observer} from 'mobx-react';
 
 class BuilderSidebar extends React.Component{
      
@@ -8,7 +9,7 @@ class BuilderSidebar extends React.Component{
     };
 
    static defaultProps = {
-       id : 'textField'
+       id : ''
     };
     
     render =() =>{
@@ -18,4 +19,4 @@ class BuilderSidebar extends React.Component{
          </div>) ;
     };
 }
-export default BuilderSidebar;
+export default observer (BuilderSidebar);

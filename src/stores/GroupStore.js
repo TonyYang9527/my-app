@@ -37,6 +37,7 @@ const actions = {
 
         let element=_.find(state.groups, _.matchesProperty('name', name));
         console.log("getClassName :" ,element);
+        console.log("getClassName :" ,element);
         return element.className ;
     })
 };
