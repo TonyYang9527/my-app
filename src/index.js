@@ -10,20 +10,26 @@ import GroupHeader from '../src/components/GroupHeader';
 import GroupPanel from '../src/components/GroupPanel';
 import BuilderSidebar from '../src/components/BuilderSidebar';
 import FormComponents from '../src/components/FormComponents';
+import {actions}from '../src/stores/GroupStore';
 
 const id ='builder-sidebar-'+Math.random().toString(36).substring(7) ; 
 ReactDOM.render(
-
 <FormComponents>
 <BuilderSidebar id={id}>
-    <GroupPanel >
-       <GroupHeader id={id}>Basic</GroupHeader>
-       <Group>
-         <GroupContainer>
-            <ComponentBuilder />
-         </GroupContainer>
-     </Group>
-    </GroupPanel>
+   {
+    actions.getGroups().map((group , index)=>{
+        return (
+            <GroupPanel key={index} type ={group.name} >
+              <GroupHeader id={id} type={group.name} title={group.name} onOpenGroup={actions.changeClassName} />
+              <Group type={group.name} className={actions.getClassName(group.name)}>
+               <GroupContainer type={group.name}>
+                 <ComponentBuilder  />
+               </GroupContainer>
+              </Group>
+           </GroupPanel>
+        ) ;
+     })   
+   }
     </BuilderSidebar>
     </FormComponents>
     , document.getElementById('builder'));

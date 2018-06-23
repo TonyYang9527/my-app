@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import {observer} from 'mobx-react';
 class GroupContainer extends React.Component{
     
     static propTypes = {
          type: PropTypes.string,
-         children:  PropTypes.array,
     };
     
     static defaultProps = {
-        type : 'basic',
-        children: [],
+        type : ''
      };
      
     render =() =>{
@@ -20,4 +18,4 @@ class GroupContainer extends React.Component{
          </div>) ;
     };
 }
-export default GroupContainer;
+export default observer(GroupContainer);

@@ -1,21 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {observer} from 'mobx-react';
 
 class Group extends React.Component{
     
     static propTypes = {
-         key: PropTypes.string,
+         type: PropTypes.string,
+         className: PropTypes.string,
+         
     };
     
     static defaultProps = {
-        key : 'basic',
+        type : '',
+        className :'' ,
      };
      
     render =() =>{
+        console.log("Group render ", this.props);
         return(
-          <div id={'group-'+this.props.key}  className='panel-collapse collapse in show'>
+          <div id={'group-'+this.props.type}  className={this.props.className}>
             {this.props.children}
          </div>) ;
     };
 }
-export default Group;
+export default observer(Group);

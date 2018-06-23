@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {observer} from 'mobx-react';
 
 class GroupPanel extends React.Component{
        
@@ -8,7 +9,7 @@ class GroupPanel extends React.Component{
    };
    
    static defaultProps = {
-        type : 'basic'
+        type : ''
     };
 
     render =() =>{
@@ -18,4 +19,4 @@ class GroupPanel extends React.Component{
          </div>) ;
     };
 }
-export default GroupPanel;
+export default observer(GroupPanel) ;

@@ -1,19 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import {observer} from 'mobx-react';
 class GroupHeader extends React.Component{ 
   
   static propTypes = {
     id: PropTypes.string,
     type: PropTypes.string,
+    title: PropTypes.string,
+    onOpenGroup : PropTypes.func ,
 };
 
 static defaultProps = {
    id : '',
-   type : 'basic'
+   type : '',
+   title : '',
+   onOpenGroup : ()=>{} ,
 };
  
-
     render =() =>{
         return(
           <div  className='card-header panel-heading form-builder-group-header'>
@@ -22,12 +25,12 @@ static defaultProps = {
             <button className='btn btn-block builder-group-button'
              data-toggle='collapse' 
              data-parent={'#'+this.props.id}
-             data-target ={'#group-'+this.props.type} > 
-             
-             {this.props.children}
+             data-target ={'#group-'+this.props.type} 
+             onClick={e =>this.props.onOpenGroup(this.props.type)}> 
+             {this.props.title}
             </button>
           </h5>
          </div>) ;
     };
 }
-export default GroupHeader;
+export default observer(GroupHeader);
