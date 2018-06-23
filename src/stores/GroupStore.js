@@ -14,11 +14,26 @@ const actions = {
         let  advanced ={
             name : 'advanced',
             title: 'Advanced',
-            weight: 0,
+            weight: 10,
             className : 'panel-collapse collapse ' , 
        } ;
+       let   layout= {
+        name : 'layout',
+        title: 'Layout',
+        weight: 20,
+        className : 'panel-collapse collapse ' , 
+      };
+      let data = {
+        name : 'data',
+        title: 'Data',
+        weight: 20,
+        className : 'panel-collapse collapse ' , 
+      }
+
      state.groups.push(basic);
      state.groups.push(advanced);
+     state.groups.push(layout);
+     state.groups.push(data);
     }),
 
     getGroups: action(() => {
