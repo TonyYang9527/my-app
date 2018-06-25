@@ -5,6 +5,6 @@ import './index.css';
 //import ComponentFactory from '../src/builder/ComponentFactory';
 import App from  './App' ;
 
-ReactDOM.render( <App />  , document.getElementById('builder'));
+ReactDOM.render( <App />  , document.getElementById('root'));
   
 //ReactDOM.render(<FormMaker form={{display: 'form'}}  options={{base: 'https://examples.form.io'} } />, document.getElementById('root'));

@@ -1,10 +1,10 @@
 import React from 'react';
-import FormComponents from '../src/components/FormComponents';
+import ApplicationBuilder from '../src/components/ApplicationBuilder';
 
 class App extends React.Component{
 
     render() {
-        return <FormComponents />;
+        return <ApplicationBuilder />;
     }
 }
 export default App;

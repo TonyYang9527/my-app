@@ -42,7 +42,6 @@ const actions = {
        
     changeClassName: action((name) => {
         
-        console.log("changeClassName :" ,Array.isArray(state.groups.slice()));
         if (state.groups instanceof Array){
           let element=_.find(state.groups, _.matchesProperty('name', name));
           console.log("changeClassName :" ,element);

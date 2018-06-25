@@ -21,7 +21,6 @@ render =() =>{
         return(
           <div  className='card-header panel-heading form-builder-group-header'>
           <h5 className='mb-0 panel-title' > 
-            
             <button className='btn btn-block builder-group-button'
              data-toggle='collapse' 
              data-parent={'#'+this.props.id}

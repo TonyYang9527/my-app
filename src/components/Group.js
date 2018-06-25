@@ -16,7 +16,6 @@ class Group extends React.Component{
      };
      
     render =() =>{
-        console.log("Group render ", this.props);
         return(
           <div id={'group-'+this.props.type}  className={this.props.className}>
             {this.props.children}
