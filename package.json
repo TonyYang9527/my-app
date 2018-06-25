@@ -4,13 +4,13 @@
   "private": true,
   "dependencies": {
     "antd": "^3.6.3",
-    "dragula": "^3.7.2",
     "formiojs": "^3.0.0-rc.5",
     "lodash": "^4.17.10",
     "mobx": "^3.6.1",
     "mobx-react": "^4.4.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-dragula": "^1.1.17",
     "react-scripts": "1.0.14",
     "yarn": "^1.7.0"
   },

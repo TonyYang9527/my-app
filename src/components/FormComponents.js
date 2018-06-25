@@ -8,7 +8,7 @@ import GroupPanel from './GroupPanel';
 import BuilderSidebar from './BuilderSidebar';
 import {actions} from '../stores/GroupStore';
 import {observer} from 'mobx-react';
-import dragula from 'dragula';
+import dragula from 'react-dragula';
 import ReactDOM from 'react-dom';
 
 
@@ -24,9 +24,24 @@ class FormComponents extends React.Component{
   };
 
   componentDidMount=()=> {
-    console.log("FormComponents componentDidMount:",this.refs.GroupContainer)
-    let  container = ReactDOM.findDOMNode(this.refs.GroupContainer);
-      dragula([container]);
+    console.log("FormComponents componentDidMount:",this.refs.GroupContainer);
+    console.log("FormComponents DragContainer:",this.refs.DragContainer);
+
+    let  sidebarContainers = ReactDOM.findDOMNode(this.refs.GroupContainer);
+    let  dragContainers = ReactDOM.findDOMNode(this.refs.DragContainer);
+    
+    this.dragula = dragula([sidebarContainers ,dragContainers], {
+        copy(e) {
+          console.log("FormComponents copy :",e.target);
+          return e.classList.contains('drag-copy');
+        },
+        accepts(e, target) {
+          console.log("FormComponents accepts :",e.target);
+          return !target.classList.contains('no-drop');
+        }
+      }).on('drop', function (e) {
+        console.log("FormComponents drop :",e.target);
+      });
   };
 
     render =() =>{
