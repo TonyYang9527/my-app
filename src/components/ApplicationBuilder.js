@@ -10,7 +10,10 @@ class ApplicationBuilder extends React.Component{
         return(
         <div className="well">  
           <div id="builder" className="builder-form row formbuilder">
-
+           <FormComponents random={random} />
+           <DragContainer  random={random}>
+            <DragDropTip  random={random} />
+          </DragContainer>
           </div>
         </div>) ;
     };
