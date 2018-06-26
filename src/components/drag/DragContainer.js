@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import {observer} from 'mobx-react';
-import dragula from 'react-dragula';
+import reactDragula from 'react-dragula';
 class DragContainer extends React.Component{
     
     static propTypes = {
@@ -14,9 +14,19 @@ class DragContainer extends React.Component{
      };
      
      componentDidMount=()=> {
-        let  dragContainers = ReactDOM.findDOMNode(this);
-        console.log("DragContainer DragContainer:",dragContainers);
-         dragula([dragContainers]);
+        let  dragContainer = ReactDOM.findDOMNode(this);
+        console.log("DragContainer dragContainer:",dragContainer);
+        reactDragula([dragContainer],{
+            // copy(element) {
+            //     console.log("DragContainer:  copy  element : ",element) ;
+            //     return element.classList.contains('drag-copy');
+            //   },
+            //   accepts(element, target) {
+            //     console.log("DragContainer:  accepts  element : ",element) ;
+            //     return !target.classList.contains('no-drop');
+            //   }
+
+        });
       };
 
 

@@ -18,7 +18,7 @@ class ComponentBuilder extends React.Component{
         group: 'basic',
         weight: 0,
         schema: {}
-     };
+     };      
      
      render =() =>{
         return(

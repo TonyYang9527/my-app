@@ -10,9 +10,7 @@ import Column from '../components/container/Column';
 
 const random =Math.random().toString(36).substring(7).toString() ; 
 class ApplicationBuilder extends React.Component{
-
-
-      
+    
     render =() =>{
         return(
         <RowContainer >

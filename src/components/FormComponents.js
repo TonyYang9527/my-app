@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ComponentBuilder from './ComponentBuilder';
 import GroupContainer from './GroupContainer';
 import Group from './Group';
 import GroupHeader from './GroupHeader';
@@ -31,11 +30,8 @@ class FormComponents extends React.Component{
                    <GroupPanel key={index} type ={group.name} >
                      <GroupHeader id={"builder-sidebar-"+this.props.random} type={group.name} title={group.title} onOpenGroup={actions.changeClassName} />
                      <Group type={group.name} className={group.className}>
-                      <GroupContainer type={group.name}>
-                        <ComponentBuilder  />
-                      </GroupContainer>
+                          <GroupContainer type={group.name} />
                      </Group>
-                     
                   </GroupPanel>
                ) ;
             })   
