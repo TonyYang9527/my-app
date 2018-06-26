@@ -8,8 +8,6 @@ import GroupPanel from './GroupPanel';
 import BuilderSidebar from './BuilderSidebar';
 import {actions} from '../stores/GroupStore';
 import {observer} from 'mobx-react';
-import dragula from 'react-dragula';
-import ReactDOM from 'react-dom';
 
 
 //const id ='builder-sidebar-'+Math.random().toString(36).substring(7) ; 
@@ -23,27 +21,6 @@ class FormComponents extends React.Component{
     random : ''
   };
 
-  componentDidMount=()=> {
-    console.log("FormComponents componentDidMount:",this.refs.GroupContainer);
-    console.log("FormComponents DragContainer:",this.refs.DragContainer);
-
-    let  sidebarContainers = ReactDOM.findDOMNode(this.refs.GroupContainer);
-    let  dragContainers = ReactDOM.findDOMNode(this.refs.DragContainer);
-    
-    this.dragula = dragula([sidebarContainers ,dragContainers], {
-        copy(e) {
-          console.log("FormComponents copy :",e.target);
-          return e.classList.contains('drag-copy');
-        },
-        accepts(e, target) {
-          console.log("FormComponents accepts :",e.target);
-          return !target.classList.contains('no-drop');
-        }
-      }).on('drop', function (e) {
-        console.log("FormComponents drop :",e.target);
-      });
-  };
-
     render =() =>{
         return(
           <div className='col-xs-4 col-sm-3 col-md-2 formcomponents'>
@@ -54,7 +31,7 @@ class FormComponents extends React.Component{
                    <GroupPanel key={index} type ={group.name} >
                      <GroupHeader id={"builder-sidebar-"+this.props.random} type={group.name} title={group.title} onOpenGroup={actions.changeClassName} />
                      <Group type={group.name} className={group.className}>
-                      <GroupContainer type={group.name}  ref="GroupContainer">
+                      <GroupContainer type={group.name}>
                         <ComponentBuilder  />
                       </GroupContainer>
                      </Group>
