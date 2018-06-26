@@ -6,7 +6,7 @@ export default class   DragulaContainers {
       static sidebarContainers = [];
 
     static addDragContainers=(element) => {
-           console.log("DragulaContainers addDragContainers " ,element) ;
+           //console.log("DragulaContainers addDragContainers " ,element) ;
            DragulaContainers.dragContainers.push(element) ;
     };
     static   getDragContainers=() => {
@@ -15,7 +15,7 @@ export default class   DragulaContainers {
     };
 
     static addSidebarContainers=(element) =>{
-           console.log("DragulaContainers addSidebarContainers " ,element) ;
+           //console.log("DragulaContainers addSidebarContainers " ,element) ;
             DragulaContainers.sidebarContainers.push(element) ;
     };
 
