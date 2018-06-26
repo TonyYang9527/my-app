@@ -12,13 +12,8 @@ import DragulaContainers from './DragulaContainers';
 import GroupContainer from './GroupContainer';
 const random =Math.random().toString(36).substring(7).toString() ; 
 class ApplicationBuilder extends React.Component{
-
-
-    componentDidMount=()=> {
-        //console.log("ApplicationBuilder  dragContainers " , DragulaContainers.sidebarContainers) ;
-        //console.log("ApplicationBuilder  sidebarContainers" , DragulaContainers.dragContainers) ;
     
-
+    componentDidMount=()=> {
         reactDragula(DragulaContainers.sidebarContainers.concat(DragulaContainers.dragContainers),{
             copy(element) {
               console.log("ApplicationBuilder  copy" , element) ;

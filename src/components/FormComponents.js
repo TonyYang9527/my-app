@@ -8,9 +8,6 @@ import BuilderSidebar from './BuilderSidebar';
 import {actions} from '../stores/GroupStore';
 import {observer} from 'mobx-react';
 
-
-//const id ='builder-sidebar-'+Math.random().toString(36).substring(7) ; 
-
 class FormComponents extends React.Component{
 
   static propTypes = {

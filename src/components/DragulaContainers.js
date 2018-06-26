@@ -8,9 +8,6 @@ export default class   DragulaContainers {
     static addDragContainers=(element) => {
            console.log("DragulaContainers addDragContainers " ,element) ;
            DragulaContainers.dragContainers.push(element) ;
-
-           console.log("DragulaContainers addDragContainers " ,DragulaContainers.getDragContainers()[0]) ;
-
     };
     static   getDragContainers=() => {
        return  DragulaContainers.dragContainers ;
@@ -18,7 +15,7 @@ export default class   DragulaContainers {
     };
 
     static addSidebarContainers=(element) =>{
-           //console.log("DragulaContainers addSidebarContainers " ,element) ;
+           console.log("DragulaContainers addSidebarContainers " ,element) ;
             DragulaContainers.sidebarContainers.push(element) ;
     };
 

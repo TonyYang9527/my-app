@@ -12,10 +12,8 @@ class GroupContainer extends React.Component{
     static defaultProps = {
         type : ''
      };
-
      componentDidMount=()=> {
-        const  sidebarContainers = ReactDOM.findDOMNode(this);
-         DragulaContainers.addSidebarContainers(sidebarContainers);
+         DragulaContainers.addSidebarContainers(ReactDOM.findDOMNode(this));
       };
 
     render =() =>{

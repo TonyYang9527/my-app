@@ -15,8 +15,7 @@ class DragContainer extends React.Component{
      };
      
      componentDidMount=()=> {
-        const  dragContainer = ReactDOM.findDOMNode(this);
-         DragulaContainers.addDragContainers(dragContainer) ;
+         DragulaContainers.addDragContainers( ReactDOM.findDOMNode(this)) ;
       };
       
     render =() =>{
