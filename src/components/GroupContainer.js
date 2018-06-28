@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {observer} from 'mobx-react';
 import ReactDOM from 'react-dom';
 import ComponentBuilder from '../components/ComponentBuilder';
-import DragulaContainers from './DragulaContainers';
+import DragulaContainers from '../dragula/DragulaContainers';
 
 class GroupContainer extends React.Component{
     static propTypes = {

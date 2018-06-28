@@ -1,12 +1,10 @@
 
-
-export default class   DragulaContainers {
+export default class  DragulaContainers {
 
       static dragContainers = [];
       static sidebarContainers = [];
 
     static addDragContainers=(element) => {
-           //console.log("DragulaContainers addDragContainers " ,element) ;
            DragulaContainers.dragContainers.push(element) ;
     };
     static   getDragContainers=() => {
@@ -15,7 +13,6 @@ export default class   DragulaContainers {
     };
 
     static addSidebarContainers=(element) =>{
-           //console.log("DragulaContainers addSidebarContainers " ,element) ;
             DragulaContainers.sidebarContainers.push(element) ;
     };
 
